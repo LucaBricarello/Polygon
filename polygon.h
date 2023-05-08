@@ -56,7 +56,9 @@ public:
 	float GetArea();
 	float GetPerimeter();
 
+
 protected:
+
 	float area;
 	float perimeter;
 

@@ -9,21 +9,20 @@
 #include "Rectangle.h"
 
 /// @brief default constructor, changes values of area and perimeter inherited from Polygon
-Rectangle::Rectangle() {
+Rectangle::Rectangle() 
+{
 
 	cout << "Rectangle - constructor - default" << endl;
 
 	Init();
-
-	Area();
-	Perimeter();
 
 }
 
 /// @brief init constructor, changes values of area and perimeter inherited from Polygon
 /// @param w width
 /// @param h length
-Rectangle::Rectangle(float w, float l) {
+Rectangle::Rectangle(float w, float l) 
+{
 
 	Init();
 
@@ -51,14 +50,14 @@ Rectangle::Rectangle(const Rectangle &r)
 	
 	Init(r);
 
-	Area();
-	Perimeter();
 }
 
 /// @brief destructor 
-Rectangle::~Rectangle() {
+Rectangle::~Rectangle() 
+{
 
 	cout << "Rectangle - destructor" << endl;
+	Reset();
 
 }
 
@@ -73,9 +72,6 @@ Rectangle& Rectangle::operator=(const Rectangle& r)
 
 	Reset();
 	Init(r);
-
-	Area();
-	Perimeter();
 
 	return *this;
 }
@@ -96,7 +92,8 @@ bool Rectangle::operator==(const Rectangle& r)
 
 /// @brief set width of the object, changes values of area and perimeter inherited from Polygon
 /// @param w width
-void Rectangle::SetWidth(float w) {
+void Rectangle::SetWidth(float w) 
+{
 
 	if (w < 0) {
 		ErrorMessage("WARNING: Rectangle - SetWidth: width should be > 0");
@@ -111,7 +108,8 @@ void Rectangle::SetWidth(float w) {
 
 /// @brief set length of the object, changes values of area and perimeter inherited from Polygon
 /// @param l length
-void Rectangle::SetLength(float l) {
+void Rectangle::SetLength(float l) 
+{
 
 	if (l < 0) {
 		ErrorMessage("WARNING: Rectangle - SetLength: length should be > 0");
@@ -127,7 +125,8 @@ void Rectangle::SetLength(float l) {
 /// @brief set width and length of the object, changes values of area and perimeter inherited from Polygon
 /// @param w width
 /// @param l length
-void Rectangle::SetDim(float w, float l) {
+void Rectangle::SetDim(float w, float l) 
+{
 
 	SetWidth(w);
 	SetLength(l);
@@ -139,7 +138,8 @@ void Rectangle::SetDim(float w, float l) {
 
 /// @brief get width of the object
 /// @return width of the object
-float Rectangle::GetWidth() {
+float Rectangle::GetWidth() 
+{
 
 	return width;
 
@@ -147,7 +147,8 @@ float Rectangle::GetWidth() {
 
 /// @brief get length of the object
 /// @return length of the object
-float Rectangle::GetLength() {
+float Rectangle::GetLength() 
+{
 
 	return length;
 
@@ -156,7 +157,8 @@ float Rectangle::GetLength() {
 /// @brief get width and length of the object returning them in the given variables
 /// @param given variable for width in pixels
 /// @param given variable for length in pixels
-void Rectangle::GetDim(float&w, float&l) {
+void Rectangle::GetDim(float&w, float&l)
+{
 
 	w = width;
 	l = length;
@@ -200,6 +202,9 @@ void Rectangle::Init()
 {
 	width = 0;
 	length = 0;
+
+	Area();
+	Perimeter();
 }
 
 /// @brief function to copy the values of a given Rectangle in the Rectangle that calls the function
@@ -208,6 +213,9 @@ void Rectangle::Init(const Rectangle& r)
 {
 	width = r.width;
 	length = r.length;
+
+	Area();
+	Perimeter();
 }
 
 /// @brief function to reset the parameters of a Rectangle
@@ -215,6 +223,9 @@ void Rectangle::Reset()
 {
 	width = 0;
 	length = 0;
+
+	Area();
+	Perimeter();
 }
 
 /// @brief error message function

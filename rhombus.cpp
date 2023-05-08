@@ -15,8 +15,6 @@ Rhombus::Rhombus()
 
 	Init();
 
-	Area();
-	Perimeter();
 }
 
 /// @brief init constructor, changes values of area and perimeter inherited from Polygon
@@ -52,8 +50,6 @@ Rhombus::Rhombus(const Rhombus& r)
 
 	Init(r);
 
-	Area();
-	Perimeter();
 }
 
 /// @brief destructor 
@@ -61,7 +57,7 @@ Rhombus::~Rhombus()
 {
 
 	cout << "Rhombus - Destructor" << endl;
-
+	Reset();
 }
 
 /// @brief overload operator =, changes values of area and perimeter inherited from Polygon
@@ -74,8 +70,6 @@ Rhombus& Rhombus::operator=(const Rhombus& r)
 	Reset();
 	Init(r);
 
-	Area();
-	Perimeter();
 
 	return *this;
 }
@@ -222,6 +216,9 @@ void Rhombus::Init()
 {
 	diagonalH = 0;
 	diagonalV = 0;
+
+	Area();
+	Perimeter();
 }
 
 /// @brief function to copy the values of a given Rhombus in the Rhombus that calls the function
@@ -230,6 +227,9 @@ void Rhombus::Init(const Rhombus& r)
 {
 	diagonalH = r.diagonalH;
 	diagonalV = r.diagonalV;
+
+	Area();
+	Perimeter();
 }
 
 /// @brief function to reset the parameters of a Rhombus
@@ -237,6 +237,9 @@ void Rhombus::Reset()
 {
 	diagonalH = 0;
 	diagonalV = 0;
+
+	Area();
+	Perimeter();
 }
 
 /// @brief error message function

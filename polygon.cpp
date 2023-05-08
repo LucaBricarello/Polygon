@@ -50,6 +50,7 @@ Polygon::Polygon(const Polygon& p)
 Polygon::~Polygon()
 {
 	cout << "Polygon - destructor" << endl;
+	Reset();
 }
 
 /// @brief overload operator =
