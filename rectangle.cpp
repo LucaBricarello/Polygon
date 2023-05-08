@@ -29,13 +29,13 @@ Rectangle::Rectangle(float w, float l) {
 
 	cout << "Rectangle - constructor" << endl;
 
-	if (w <= 0) 
-		cout << "WARNING: Rectangle - constructor: width should be > 0" << endl;
+	if (w <= 0)
+		ErrorMessage("WARNING: Rectangle - constructor: width should be > 0");
 	else
 		width = w;
 
 	if (l <= 0) 
-		cout << "WARNING: Rectangle - constructor: length should be > 0" << endl;
+		ErrorMessage("WARNING: Rectangle - constructor: length should be > 0");
 	else
 		length = l;
 
@@ -99,7 +99,7 @@ bool Rectangle::operator==(const Rectangle& r)
 void Rectangle::SetWidth(float w) {
 
 	if (w < 0) {
-		cout << "WARNING: Rectangle - SetWidth: width should be > 0" << endl;
+		ErrorMessage("WARNING: Rectangle - SetWidth: width should be > 0");
 		return;
 	}
 
@@ -114,7 +114,7 @@ void Rectangle::SetWidth(float w) {
 void Rectangle::SetLength(float l) {
 
 	if (l < 0) {
-		cout << "WARNING: Rectangle - SetLength: length should be > 0" << endl;
+		ErrorMessage("WARNING: Rectangle - SetLength: length should be > 0");
 		return;
 	}
 

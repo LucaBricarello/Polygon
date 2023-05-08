@@ -30,12 +30,12 @@ Rhombus::Rhombus(float dH, float dV)
 	cout << "Rhombus - Constructor" << endl;
 
 	if (dH <= 0)
-		cout << "WARNING: Rhombus - Constructor: diagonalH should be > 0" << endl;
+		ErrorMessage("WARNING: Rhombus - Constructor: diagonalH should be > 0");
 	else
 		diagonalH = dH;
 
 	if (dV <= 0)
-		cout << "WARNING: Rhombus - Constructor: diagonalV should be > 0" << endl;
+		ErrorMessage("WARNING: Rhombus - Constructor: diagonalV should be > 0");
 	else
 		diagonalV = dV;
 
@@ -105,7 +105,7 @@ void Rhombus::SetHorD(float dH)
 {
 
 	if (dH < 0) {
-		cout << "WARNING: Rhombus - SetHorD: horizontal diagonal should be > 0" << endl;
+		ErrorMessage("WARNING: Rhombus - SetHorD: horizontal diagonal should be > 0");
 		return;
 	}
 
@@ -121,7 +121,7 @@ void Rhombus::SetVerD(float dV)
 {
 
 	if (dV < 0) {
-		cout << "WARNING: Rhombus - SetVerD: vertical diagonal should be > 0" << endl;
+		ErrorMessage("WARNING: Rhombus - SetVerD: vertical diagonal should be > 0");
 		return;
 	}
 
